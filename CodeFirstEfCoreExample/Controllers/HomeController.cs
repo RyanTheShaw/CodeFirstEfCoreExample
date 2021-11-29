@@ -1,4 +1,5 @@
-﻿using CodeFirstEfCoreExample.Models;
+﻿using CodeFirstEfCoreExample.DataAccess.DbContexts;
+using CodeFirstEfCoreExample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,23 @@ namespace CodeFirstEfCoreExample.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+		private MySqlDbContext _dbContext;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, MySqlDbContext dbContext)
 		{
 			_logger = logger;
+			_dbContext = dbContext;
 		}
 
 		public IActionResult Index()
 		{
-			return View();
+			IndexViewModel viewModel = new IndexViewModel()
+			{
+				Employees = _dbContext.Employees.ToList(),
+				Roles = _dbContext.Roles.ToList()
+			};
+
+			return View(viewModel);
 		}
 
 		public IActionResult Privacy()

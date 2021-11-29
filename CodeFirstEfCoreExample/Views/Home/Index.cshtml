@@ -1,8 +1,65 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model CodeFirstEfCoreExample.Models.IndexViewModel
+
+@{
+	ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 class="display-4">This is an example app to demo entity framework core - with code first migrations!</h1>
+
+	<h3>Employees</h3>
+
+	@if (!Model.Employees.Any())
+	{
+		<p>There currently aren't any employees in the database!</p>
+	}
+	else
+	{
+		<table id="employee-table" style="margin: auto;">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Role</th>
+				</tr>
+
+				@foreach (var employee in Model.Employees)
+				{
+					<tr>
+						<td>@employee.Id</td>
+						<td>@employee.FirstName @employee.LastName</td>
+						<td>@employee.Role.Name</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+
+	<h3>Roles</h3>
+
+	@if (!Model.Roles.Any())
+	{
+		<p>There currently aren't any role in the database!</p>
+	}
+	else
+	{
+		<table id="roles-table" style="margin: auto;">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Role</th>
+				</tr>
+
+				@foreach (var role in Model.Roles)
+				{
+					<tr>
+						<td>@role.Id</td>
+						<td>@role.Name</td>
+						<td>@role.RoleType</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
 </div>
