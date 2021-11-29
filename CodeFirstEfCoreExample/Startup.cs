@@ -28,10 +28,11 @@ namespace CodeFirstEfCoreExample
 			services.AddControllersWithViews();
 			services.AddDbContext<MySqlDbContext>(options => 
 				options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8,0,27))));
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MySqlDbContext context)
 		{
 			if (env.IsDevelopment())
 			{
@@ -56,6 +57,8 @@ namespace CodeFirstEfCoreExample
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}/{id?}");
 			});
+
+			context.Database.Migrate();
 		}
 	}
 }
