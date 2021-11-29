@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstEfCoreExample", "CodeFirstEfCoreExample\CodeFirstEfCoreExample.csproj", "{A85B812B-6B38-4E0C-B988-FE10FBE66307}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstEfCoreExample.DataAccess", "CodeFirstEfCoreExample.DataAccess\CodeFirstEfCoreExample.DataAccess.csproj", "{C0D9F104-C151-46DF-8841-9B0AD75E87C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A85B812B-6B38-4E0C-B988-FE10FBE66307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85B812B-6B38-4E0C-B988-FE10FBE66307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85B812B-6B38-4E0C-B988-FE10FBE66307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85B812B-6B38-4E0C-B988-FE10FBE66307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D9F104-C151-46DF-8841-9B0AD75E87C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D9F104-C151-46DF-8841-9B0AD75E87C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D9F104-C151-46DF-8841-9B0AD75E87C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D9F104-C151-46DF-8841-9B0AD75E87C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1297EDAC-3DA6-40F1-9B97-015813035EAE}
+	EndGlobalSection
+EndGlobal
